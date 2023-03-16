@@ -16,5 +16,15 @@ namespace AS2223_4G_INF_UbaldiEdoardo_API.Controllers
             }
             return Json(new { output = "Dispari", status = "OK" });
         }
+
+        [HttpGet("GetFattoriale")]
+        public JsonResult GetFattoriale(int n1)
+        {
+            int output = 1;
+            for (int i = 1; i <= n1; i++) {
+                output = output * i;
+            }
+            return Json(new { output = output, status = "OK" });
+        }
     }
 }
