@@ -26,5 +26,29 @@ namespace AS2223_4G_INF_UbaldiEdoardo_API.Controllers
             }
             return Json(new { output = output, status = "OK" });
         }
+
+        [HttpGet("GetParabola")]
+        public JsonResult GetParabola(int n1, int n2, int n3)
+        {
+            int delta;      //ax^2 + bx + c = 0
+            
+
+        }
+
+        [HttpGet("GetTasse")]
+        public JsonResult GetTasse(int n1)
+        {
+            if(n1 > 35000)
+            {
+                n1 = (n1 * 28) / 100;
+                return Json(new { output = n1, status = "OK" });
+            }
+            else
+            {
+                n1 = (n1 * 12) / 100;
+                return Json(new { output = n1, status = "OK" });
+            }
+        }
+
     }
 }
